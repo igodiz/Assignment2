@@ -8,10 +8,10 @@ import (
 )
 
 const (
-	hosts = "ds229435.mlab.com:29435"
-	databaseName = "currencydb"
-	userName = "test"
-	password = "test"
+	hosts = "ds243055.mlab.com:43055"
+	databaseName = "cdatabase"
+	userName = "igodiz"
+	password = "Heidu123"
 )
 
 func createSession() (*mgo.Session, error) {
@@ -39,7 +39,7 @@ func InsertCurrencyTick(currencyTick types.CurrencyData) {
 	}
 	defer session.Close()
 
-	err2 := session.DB("currencydb").C("tick").Insert(currencyTick)
+	err2 := session.DB("cdatabase").C("tick").Insert(currencyTick)
 	if err2 != nil {
 		log.Fatal("Error inserting currencytick to db")
 	}
